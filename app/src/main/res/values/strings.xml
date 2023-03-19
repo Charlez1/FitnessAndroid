@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Fitness</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="workout_item">Workout</string>
+    <string name="stats_item">Stats</string>
+    <string name="setting_item">Setting</string>
+</resources>

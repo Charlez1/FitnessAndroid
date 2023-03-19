@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@id/settings"
+        android:title="@string/setting_item"
+        android:icon="@drawable/ic_baseline_settings_24" />
+    <item android:id="@id/workout"
+        android:title="@string/workout_item"
+        android:icon="@drawable/ic_baseline_sports_gymnastics_24" />
+    <item android:id="@id/stats"
+        android:title="@string/stats_item"
+        android:icon="@drawable/ic_baseline_calendar_month_24" />
+</menu>
