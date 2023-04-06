@@ -18,7 +18,7 @@ class TabsFragment : Fragment(R.layout.fragment_tabs) {
         super.onCreate(savedInstanceState)
         binding = FragmentTabsBinding.bind(view)
 
-        val navHost = childFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
+        val navHost = childFragmentManager.findFragmentById(R.id.tabs_fragment_container) as NavHostFragment
         val navController = navHost.navController
         NavigationUI.setupWithNavController(binding.bottomNavigationBar, navController)
 

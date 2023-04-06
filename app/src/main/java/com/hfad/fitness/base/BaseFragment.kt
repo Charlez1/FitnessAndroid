@@ -1,17 +1,22 @@
 package com.hfad.fitness.base
 
-import android.text.Layout
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.navigation.NavArgs
+import androidx.navigation.NavArgsLazy
+import androidx.navigation.fragment.navArgs
 import com.hfad.fitness.R
-
+import com.hfad.fitness.Repositories
 import com.hfad.fitness.async.Result
 import com.hfad.fitness.async.SuccessResult
 import com.hfad.fitness.async.ErrorResult
 import com.hfad.fitness.async.PendingResult
 import com.hfad.fitness.databinding.PartResultBinding
+import com.hfad.fitness.screens.ViewModelFactory
 
 
 abstract class BaseFragment(layout: Int): Fragment(layout) {

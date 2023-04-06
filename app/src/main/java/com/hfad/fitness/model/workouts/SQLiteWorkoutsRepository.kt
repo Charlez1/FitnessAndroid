@@ -13,7 +13,7 @@ class SQLiteWorkoutsRepository(
 ) : WorkoutsRepository {
 
     override suspend fun getWorkouts(): List<Workout> = withContext(Dispatchers.IO) {
-        delay(1000)
+//        delay(1000)
         return@withContext queryWorkouts()
     }
 

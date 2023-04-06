@@ -14,8 +14,8 @@ object AppSQLiteContract {
         const val COLUMN_ID = "id"
         const val COLUMN_NAME = "name"
         const val COLUMN_ANIMATION = "animation"
-        const val COLUMN_SECONDS = "seconds"
-        const val COLUMN_AMOUNTS = "amounts"
+        const val COLUMN_COUNT = "count"
+        const val COLUMN_IS_COUNT_SECONDS = "is_count_seconds"
     }
 
     object WorkoutsExercisesTable {

@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hfad.fitness.R
+import com.hfad.fitness.Repositories
 import com.hfad.fitness.databinding.FragmentWorkoutBinding
 import com.hfad.fitness.base.BaseFragment
 import com.hfad.fitness.base.observeEvent
@@ -15,19 +16,19 @@ import com.hfad.fitness.screens.createViewModel
 
 class WorkoutFragment : BaseFragment(R.layout.fragment_workout) {
 
-    override val viewModel by createViewModel<WorkoutViewModel>()
+    override val viewModel by createViewModel {WorkoutViewModel(Repositories.WorkoutsRepository)}
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = FragmentWorkoutBinding.inflate(inflater, container,false)
         val adapter = WorkoutAdapter(viewModel)
 
-        viewModel.workoutList.observe(requireActivity(), Observer { result ->
+        viewModel.workoutList.observe(requireActivity()) { result ->
             renderSimpleResult(
                 root = binding.root,
                 result = result,
                 onSuccess = { adapter.workoutList = it }
             )
-        })
+        }
 
         viewModel.navigateToExercisesEvent.observeEvent(viewLifecycleOwner) { workoutId ->
             val direction = WorkoutFragmentDirections.actionWorkoutFragmentToExerciseFragment(workoutId)

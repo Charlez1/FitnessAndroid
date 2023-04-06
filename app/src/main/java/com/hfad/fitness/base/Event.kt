@@ -28,11 +28,3 @@ fun <T> LiveEvent<T>.observeEvent(lifecycleOwner: LifecycleOwner, listener: Even
         }
     }
 }
-
-
-//fun MutableUnitLiveEvent.publishEvent() = publishEvent(Unit)
-//fun UnitLiveEvent.observeEvent(lifecycleOwner: LifecycleOwner, listener: UnitEventListener) {
-//    observeEvent(lifecycleOwner) { _ ->
-//        listener()
-//    }
-//}

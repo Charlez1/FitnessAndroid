@@ -1,9 +1,9 @@
 package com.hfad.fitness.model.exercise
 
 data class Exercise(
-    val id: Long,
+    val id: Int,
     var name: String,
     var animation: String,
-    var seconds: Long,
-    val amount: Long
+    var isCountSecond: Boolean,
+    var count: Long
 )

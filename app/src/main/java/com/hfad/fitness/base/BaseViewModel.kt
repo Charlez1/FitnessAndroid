@@ -7,8 +7,6 @@ import kotlinx.coroutines.*
 import com.hfad.fitness.async.Result
 import com.hfad.fitness.async.ErrorResult
 import com.hfad.fitness.async.SuccessResult
-import kotlinx.coroutines.*
-
 open class BaseViewModel : ViewModel() {
 
 

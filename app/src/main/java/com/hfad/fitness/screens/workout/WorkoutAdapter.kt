@@ -4,13 +4,10 @@ import com.hfad.fitness.databinding.ItemWorkoutBinding
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.hfad.fitness.R
 import com.hfad.fitness.model.workouts.Workout
-
 
 interface WorkoutListActionListener {
 
@@ -19,7 +16,7 @@ interface WorkoutListActionListener {
 
 class WorkoutAdapter(
     private val actionListener: WorkoutListActionListener
-) : RecyclerView.Adapter<WorkoutAdapter.SettingViewHolder>(), View.OnClickListener {
+) : RecyclerView.Adapter<WorkoutAdapter.WorkoutViewHolder>(), View.OnClickListener {
 
     var workoutList: List<Workout> = emptyList()
 
@@ -28,14 +25,14 @@ class WorkoutAdapter(
         actionListener.navigateToListExercises(workout.id)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SettingViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkoutViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemWorkoutBinding.inflate(inflater, parent, false)
         binding.clickableLayout.setOnClickListener(this)
-        return SettingViewHolder(binding)
+        return WorkoutViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: SettingViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: WorkoutViewHolder, position: Int) {
         val workout = workoutList[position]
         holder.itemView.tag = workout
         with(holder.binding) {
@@ -49,7 +46,7 @@ class WorkoutAdapter(
     }
 
 
-    class SettingViewHolder(
+    class WorkoutViewHolder(
         val binding: ItemWorkoutBinding
     ) : RecyclerView.ViewHolder(binding.root)
 }

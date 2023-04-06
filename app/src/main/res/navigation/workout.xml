@@ -17,12 +17,37 @@
 
     <fragment
         android:id="@+id/exerciseFragment"
-        android:name="com.hfad.fitness.screens.exercise.ExerciseFragment"
+        android:name="com.hfad.fitness.screens.exerciseslist.ExerciseFragment"
         android:label="fragment_exercise"
         tools:layout="@layout/fragment_exercise" >
         <argument
             android:name="workoutId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_exerciseFragment_to_preparationFragment"
+            app:destination="@id/preparationFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/preparationFragment"
+        android:name="com.hfad.fitness.screens.preparation.PreparationFragment"
+        android:label="fragment_preparation"
+        tools:layout="@layout/fragment_preparation" >
+        <action
+            android:id="@+id/action_preparationFragment_to_currentExerciseFragment"
+            app:destination="@id/currentExerciseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/currentExerciseFragment"
+        android:name="com.hfad.fitness.screens.currentexercise.CurrentExerciseFragment"
+        android:label="fragment_current_exercise"
+        tools:layout="@layout/fragment_current_exercise">
+
+        <action
+            android:id="@+id/action_currentExerciseFragment_to_preparationFragment"
+            app:destination="@id/preparationFragment" />
+    </fragment>
+
 
 </navigation>
